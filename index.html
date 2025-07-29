@@ -16,7 +16,9 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+  <!--For icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -27,21 +29,68 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+<style>
+.plus-sign::after {
+  content: "+";
+}
+
+</style>
+<script>
+  const letters = document.querySelectorAll('.hero h2 span');
+
+  letters.forEach((letter) => {
+    letter.addEventListener('click', () => {
+      letter.classList.remove('active');
+      void letter.offsetWidth; // Force reflow to restart animation
+      letter.classList.add('active');
+    });
+  });
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const letters = document.querySelectorAll('.hero h2 span');
+    letters.forEach((letter, i) => {
+      setTimeout(() => {
+        letter.classList.add('active');
+      }, i * 150); // animate each letter with delay
+    });
+  });
+</script>
+<!-- <script>
+		const spans = document.querySelectorAll('.hero h2 span');
+
+		spans.forEach((span, idx) => {
+			span.addEventListener('click', (e) => {
+				e.target.classList.add('active');
+			});
+			span.addEventListener('animationend', (e) => {
+				e.target.classList.remove('active');
+			});
+
+			// Initial animation
+			setTimeout(() => {
+				span.classList.add('active');
+			}, 750 * (idx + 1))
+		});
+
+
+	</script> -->
+
 
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
+  <header id="header" class="header d-flex align-items-center fixed-top" style="background-color: rgb(255, 254, 254);">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
-        <!-- <img src="assets/img/logo.png" alt="">  -->
-        <h1 class="sitename"> <span class="lg">GOLD</span> SYSTEMS AND <br><span class="lg">COMMUNICATION</span> PVT LTD</h1>
+        <img src="assets/img/logo.png" alt="">
+        <!-- <h1 class="sitename"> <span class="lg">GOLD</span> SYSTEMS AND <br><span class="lg">COMMUNICATION</span> PVT LTD</h1> -->
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
+      <nav id="navmenu" class="navmenu" >
+        <ul style="color: black;">
           <li><a href="#hero" class="active">Home<br></a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
@@ -52,7 +101,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+      <a class="btn-getstarted"  href="index.html#about">Get Started</a>
 
     </div>
   </header>
@@ -65,29 +114,32 @@
       <img src="assets/img/web1.jpg" alt="" data-aos="fade-in">
 
       <div class="container">
-
-        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-xl-8 col-lg-8">
-            <h2><span>GOLD</span> SYSTEMS AND <span>COMMUNICATION</span> PVT LTD</h2>
+        
+        <div class="row justify-content-center text-center" data-aos="fade-up" >
+          <div class="col-xl-8 col-lg-8 ">
+            <h2 ><span>G</span><span>O</span><span>L</span><span>D</span>
+						<span>S</span><span>Y</span><span>S</span><span>T</span><span>E</span><span>M</span><span>S</span><br>
+					</h2>
+          <H5></H5>
           </div>
         </div>
 
         <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-xl-2 col-md-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
-              <i class="bi bi-fullscreen-exit"></i>
+              <i class="fas fa-code"></i>
               <h3><a href="">Web Solution</a></h3>
             </div>
           </div>
-          <div class="col-xl-2 col-md-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="400">
             <div class="icon-box">
-              <i class="bi bi-broadcast"></i>
+              <i class="fas fa-network-wired"></i>
               <h3><a href="">Infrastructure</a></h3>
             </div>
           </div>
-          <div class="col-xl-2 col-md-3" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
-              <i class="bi bi-fullscreen-exit"></i>
+              <i class="fas fa-cogs"></i>
               <h3><a href="">Other Services</a></h3>
             </div>
           </div>
@@ -135,9 +187,11 @@
     <section id="clients" class="clients section">
        
      <div class="container" data-aos="fade-up" data-aos-delay="100">
-  <div class="col-lg-12 order-2 order-lg-1 content">
-    <h3>Our Clients</h3>
-    <br>
+  <div class="container section-title" data-aos="fade-up">
+        <h2>Clients</h2>
+        <p>Our Clients</p>
+      </div><!-- End Section Title -->
+   
     <div class="swiper init-swiper">
       <script type="application/json" class="swiper-config">
         {
@@ -297,7 +351,7 @@ Integrity - We conduct our business with uncompromising integrity and communicat
                 <div class="stats-item d-flex">
                   <i class="bi bi-emoji-smile flex-shrink-0"></i>
                   <div>
-                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter plus-sign"></span>
                     <p><strong>Happy Clients</strong> <span>We've earned the trust of businesses across industries with our commitment to excellence.</span></p>
                   </div>
                 </div>
@@ -307,7 +361,14 @@ Integrity - We conduct our business with uncompromising integrity and communicat
                 <div class="stats-item d-flex">
                   <i class="bi bi-journal-richtext flex-shrink-0"></i>
                   <div>
-                    <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                    <!-- <div style="display: flex; flex-wrap: nowrap;">
+    <span
+        data-purecounter-start="0"
+        data-purecounter-end="9"
+        class="purecounter">0</span>
+    
+</div> -->
+                    <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter plus-sign" ></span>
                     <p><strong>Projects</strong> <span>From simple apps to complex enterprise platforms — we’ve done it all.</span></p>
                   </div>
                 </div>
@@ -317,7 +378,10 @@ Integrity - We conduct our business with uncompromising integrity and communicat
                 <div class="stats-item d-flex">
                   <i class="bi bi-headset flex-shrink-0"></i>
                   <div>
-                    <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1"></span> Hours
+
+                    
+
                     <p><strong>Hours Of Support</strong> <span>Around-the-clock support that ensures your business never skips a beat.</span></p>
                   </div>
                 </div>
@@ -327,7 +391,7 @@ Integrity - We conduct our business with uncompromising integrity and communicat
                 <div class="stats-item d-flex">
                   <i class="bi bi-people flex-shrink-0"></i>
                   <div>
-                    <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter plus-sign"></span>
                     <p><strong>Hard Workers</strong> <span>A team of top-tier developers, designers, and strategists ready to elevate your brand.</span></p>
                   </div>
                 </div>
@@ -482,7 +546,7 @@ Integrity - We conduct our business with uncompromising integrity and communicat
             </ul>
           </div>
 
-          <div class="col-lg-2 col-md-3 footer-links">
+          <div class="col-lg-3 col-md-3 footer-links">
             <h4>Our Services</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="#"> Domain Registration</a></li>
@@ -504,7 +568,7 @@ Integrity - We conduct our business with uncompromising integrity and communicat
         <p>© <span>Copyright</span> <strong class="px-1 sitename"><span>GOLD</span> SYSTEMS AND <br><span>COMMUNICATION</span> PVT LTD</strong> <span>All Rights Reserved</span></p>
         <div class="credits">
          
-          Designed by <a href="https://prasadgurav07.github.io/Portfolio/">PrasadGurav</a> Distributed by <a href="http://goldsystem.biz/">GoldSystemsandCommunicationPvtLtd</a>
+          Designed by <a href="https://prasadgurav07.github.io/Portfolio/">PrasadGurav</a> Distributed by <a href="http://goldsystem.biz/">GOLDSYSTEMSANDCOMMUNICATIONPVTLTD</a>
         </div>
       </div>
     </div>
